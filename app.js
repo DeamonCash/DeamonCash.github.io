@@ -72,3 +72,18 @@ themeButton.addEventListener('click', () => {
   applyTheme(dark);
 });
 systemTheme.addEventListener('change', event => { if (!themeChoice) applyTheme(event.matches); });
+
+// Highlight the section currently under the fixed navigation.
+const railLinks = Array.from(document.querySelectorAll('.section-rail a'));
+const railSections = railLinks.map(link => document.querySelector(link.getAttribute('href')));
+let railScheduled = false;
+function updateRail(){
+  railScheduled = false;
+  const position = window.innerHeight * .38;
+  let active = -1;
+  railSections.forEach((section,index) => { if(section && section.getBoundingClientRect().top <= position) active=index; });
+  if(window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 3) active=railSections.length-1;
+  railLinks.forEach((link,index)=> {if(index===active) link.setAttribute('aria-current','location'); else link.removeAttribute('aria-current');});
+}
+function scheduleRail(){if(!railScheduled){railScheduled=true;requestAnimationFrame(updateRail);}}
+window.addEventListener('scroll',scheduleRail,{passive:true});window.addEventListener('resize',scheduleRail);updateRail();
