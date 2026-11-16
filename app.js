@@ -51,3 +51,24 @@ if (contactDialog && typeof contactDialog.showModal === 'function') {
   });
   contactDialog.addEventListener('close', () => document.documentElement.classList.remove('contact-open'));
 }
+
+// Respect the system theme until the visitor chooses a preference.
+const themeButton = document.querySelector('.theme-toggle');
+const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+let themeChoice = null;
+try { themeChoice = localStorage.getItem('portfolio-theme'); } catch {}
+function applyTheme(dark) {
+  document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+  themeButton.setAttribute('aria-pressed', String(dark));
+  themeButton.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+  themeButton.querySelector('[aria-hidden]').textContent = dark ? '☀' : '☾';
+  themeButton.querySelector('.theme-label').textContent = dark ? 'Light' : 'Dark';
+}
+applyTheme(themeChoice ? themeChoice === 'dark' : systemTheme.matches);
+themeButton.addEventListener('click', () => {
+  const dark = document.documentElement.dataset.theme !== 'dark';
+  themeChoice = dark ? 'dark' : 'light';
+  try { localStorage.setItem('portfolio-theme', themeChoice); } catch {}
+  applyTheme(dark);
+});
+systemTheme.addEventListener('change', event => { if (!themeChoice) applyTheme(event.matches); });
