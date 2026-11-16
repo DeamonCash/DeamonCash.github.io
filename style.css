@@ -110,3 +110,7 @@ html[data-theme="dark"] .fake-lines{color:#b7c4ff}
 
 /* Show a legible crop of the tall RoverWatch capture without empty side bars. */
 #project-01 .project-content figure img{width:100%;height:clamp(200px,25vw,340px);object-fit:cover;object-position:top center}
+
+/* A subtle phone frame around the original NOVA prototype image. */
+#project-02 .nova-figure img{box-sizing:border-box;width:auto;max-width:100%;max-height:440px;border:7px solid #22232d;border-radius:30px;outline:1px solid #696a76;box-shadow:0 12px 28px rgba(0,0,0,.24);background:#0d0916}
+#project-02 .nova-figure figcaption{text-align:center;margin-top:12px}
