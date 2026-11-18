@@ -98,3 +98,31 @@ if (resumeViewer && resumeExpand && typeof resumeViewer.showModal === 'function'
   });
   resumeViewer.addEventListener('close', () => resumeExpand.focus({ preventScroll: true }));
 }
+
+// Switch between the NOVA prototype image and its recorded app demo.
+const novaViews = document.querySelectorAll('.nova-media-button');
+const novaOverview = document.querySelector('.nova-overview');
+const novaVideoView = document.querySelector('.nova-video-view');
+const novaDemo = document.querySelector('.nova-demo');
+for (const button of novaViews) {
+  button.addEventListener('click', () => {
+    const showVideo = button.dataset.novaView === 'video';
+    novaViews.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+    novaOverview.hidden = showVideo;
+    novaVideoView.hidden = !showVideo;
+    if (showVideo) {
+      novaDemo.muted = true;
+      novaDemo.play().catch(() => {});
+    } else {
+      novaDemo.pause();
+    }
+  });
+}
+document.querySelector('[aria-controls="project-02"]').addEventListener('click', event => {
+  if (event.currentTarget.getAttribute('aria-expanded') !== 'true') novaDemo.pause();
+});
+for (const button of toggles) {
+  if (button.getAttribute('aria-controls') !== 'project-02') {
+    button.addEventListener('click', () => novaDemo.pause());
+  }
+}
