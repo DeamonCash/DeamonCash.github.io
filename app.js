@@ -87,3 +87,14 @@ function updateRail(){
 }
 function scheduleRail(){if(!railScheduled){railScheduled=true;requestAnimationFrame(updateRail);}}
 window.addEventListener('scroll',scheduleRail,{passive:true});window.addEventListener('resize',scheduleRail);updateRail();
+
+const resumeViewer = document.getElementById('resume-viewer');
+const resumeExpand = document.querySelector('.resume-expand');
+if (resumeViewer && resumeExpand && typeof resumeViewer.showModal === 'function') {
+  resumeExpand.hidden = false;
+  resumeExpand.addEventListener('click', () => {
+    resumeViewer.showModal();
+    resumeViewer.scrollTop = 0;
+  });
+  resumeViewer.addEventListener('close', () => resumeExpand.focus({ preventScroll: true }));
+}
