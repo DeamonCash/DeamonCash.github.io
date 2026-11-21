@@ -96,7 +96,15 @@ if (resumeViewer && resumeExpand && typeof resumeViewer.showModal === 'function'
     resumeViewer.showModal();
     resumeViewer.scrollTop = 0;
   });
-  resumeViewer.addEventListener('close', () => resumeExpand.focus({ preventScroll: true }));
+  const resumeDiplomaLink = resumeViewer.querySelector('.resume-diploma-link');
+  resumeDiplomaLink.addEventListener('click', () => resumeViewer.close('diploma'));
+  resumeViewer.addEventListener('close', () => {
+    const target = resumeViewer.returnValue === 'diploma'
+      ? document.getElementById('efrei-diploma')
+      : resumeExpand;
+    target.focus({ preventScroll: true });
+    resumeViewer.returnValue = '';
+  });
 }
 
 // Switch between the NOVA prototype image and its recorded app demo.
@@ -124,5 +132,19 @@ document.querySelector('[aria-controls="project-02"]').addEventListener('click',
 for (const button of toggles) {
   if (button.getAttribute('aria-controls') !== 'project-02') {
     button.addEventListener('click', () => novaDemo.pause());
+  }
+}
+
+
+for (const credential of document.querySelectorAll('.credential')) {
+  const buttons = credential.querySelectorAll('.credential-switch button');
+  for (const selected of buttons) {
+    selected.addEventListener('click', () => {
+      for (const button of buttons) {
+        const active = button === selected;
+        button.setAttribute('aria-pressed', String(active));
+        document.getElementById(button.getAttribute('aria-controls')).hidden = !active;
+      }
+    });
   }
 }
