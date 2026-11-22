@@ -96,12 +96,11 @@ if (resumeViewer && resumeExpand && typeof resumeViewer.showModal === 'function'
     resumeViewer.showModal();
     resumeViewer.scrollTop = 0;
   });
-  const resumeDiplomaLink = resumeViewer.querySelector('.resume-diploma-link');
-  resumeDiplomaLink.addEventListener('click', () => resumeViewer.close('diploma'));
+  for (const link of resumeViewer.querySelectorAll('.resume-credential-link')) {
+    link.addEventListener('click', () => resumeViewer.close(link.hash.slice(1)));
+  }
   resumeViewer.addEventListener('close', () => {
-    const target = resumeViewer.returnValue === 'diploma'
-      ? document.getElementById('efrei-diploma')
-      : resumeExpand;
+    const target = document.getElementById(resumeViewer.returnValue) || resumeExpand;
     target.focus({ preventScroll: true });
     resumeViewer.returnValue = '';
   });

@@ -162,7 +162,9 @@ html[data-theme="dark"] .resume-preview{border-color:#464b5b}
 .credential-switch button:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
 .credential img{display:block;width:min(100%,820px);height:auto}
 .resume-viewer-page{position:relative}
-.resume-diploma-link{position:absolute;left:56.804%;top:71.384%;width:6.278%;height:1.107%}
-.resume-diploma-link:hover{outline:2px solid var(--blue);outline-offset:2px}
+.resume-credential-link{position:absolute}
+.resume-credential-link:hover{outline:2px solid var(--blue);outline-offset:2px}
 
 .resume-viewer-bar{z-index:1}
+
+.credential:not(:target){display:none}
