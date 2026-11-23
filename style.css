@@ -232,3 +232,7 @@ html[data-theme="dark"] .resume-preview{border-color:#464b5b}
     font-size: 16px;
   }
 }
+
+.drawer-photo-popout{padding-bottom:13.4%;overflow:visible}
+.drawer-photo-popout .drawer-photo-frame{aspect-ratio:825/798;background:#303e48 url("assets/portrait-mehdi-contact-office.webp") center/cover no-repeat}
+.drawer-portrait-popout{position:absolute;inset:0 0 auto;z-index:1;width:100%;height:auto;filter:drop-shadow(0 6px 7px #080c1952)}
