@@ -1,48 +1,47 @@
 const knowledge = [
   {
-    "id":"nova", "source":"NOVA · Project",
-    "keywords":["nova","ios","iphone","routines","fitness","workouts","entraînement"],
-    "en":"NOVA is Mehdi’s personal web and iOS app for tracking routines, workouts, and progress. Its iOS assistant can suggest a workout change, then applies it only after the user confirms.",
-    "fr":"NOVA est l’application web et iOS personnelle de Mehdi pour suivre ses routines, ses entraînements et ses progrès. Son assistant iOS peut proposer une modification de séance et l’applique après confirmation."
+    "id": "nova",
+    "source": "NOVA · Project",
+    "en": "NOVA is Mehdi’s personal web and iOS app for tracking routines, workouts, and progress. Its iOS assistant can suggest a workout change, then applies it only after the user confirms.",
+    "fr": "NOVA est l’application web et iOS personnelle de Mehdi pour suivre ses routines, ses entraînements et ses progrès. Son assistant iOS peut proposer une modification de séance et l’applique après confirmation."
   },
   {
-    "id":"nova-tech", "source":"NOVA · iOS implementation",
-    "keywords":["swift","swiftui","native","built","code","développée","technologies","stack","faite","construction"],
-    "en":"The iOS interface is implemented natively in SwiftUI. The Today V3 screen shown in the portfolio is a standalone prototype.",
-    "fr":"L’interface iOS est développée en natif avec SwiftUI. L’écran Today V3 montré dans le portfolio est un prototype indépendant."
+    "id": "nova-tech",
+    "source": "NOVA · iOS implementation",
+    "en": "The iOS interface is implemented natively in SwiftUI. The Today V3 screen shown in the portfolio is a standalone prototype.",
+    "fr": "L’interface iOS est développée en natif avec SwiftUI. L’écran Today V3 montré dans le portfolio est un prototype indépendant."
   },
   {
-    "id":"nova-data", "source":"NOVA · Demo data",
-    "keywords":["demo","démonstration","data","données","source","dataset","fictional","simulated","simulées","réelles"],
-    "en":"The NOVA portfolio screenshot uses fictional progress data, and the app video uses demo data. The portfolio describes those examples and does not document a private dataset or model training.",
-    "fr":"La capture du portfolio utilise des données fictives de progression, et la vidéo de NOVA utilise des données de démonstration. Le portfolio documente ces exemples publics."
+    "id": "nova-data",
+    "source": "NOVA · Demo data",
+    "en": "The NOVA portfolio screenshot uses fictional progress data, and the app video uses demo data. The portfolio describes those examples and does not document a private dataset or model training.",
+    "fr": "La capture du portfolio utilise des données fictives de progression, et la vidéo de NOVA utilise des données de démonstration. Le portfolio documente ces exemples publics."
   },
   {
-    "id":"experience", "source":"Résumé · Société Générale",
-    "keywords":["société générale","societe generale","experience","apprenticeship","alternance","databricks","spark","scala","delta","pipeline","kyc","genie","llama","aws","sg"],
-    "en":"Mehdi completed four years of work-study at Société Générale, including two years in Big Data Engineering. He worked on a regulatory risk pipeline using Databricks, Spark and Delta Lake. In a development environment, he prototyped 23 data validation checks and explored Llama 3.3 and Genie Space for data quality investigation.",
-    "fr":"Mehdi a effectué quatre ans en alternance à Société Générale, dont deux en Big Data Engineering. Il a travaillé sur un pipeline de risque réglementaire avec Databricks, Spark et Delta Lake. En environnement de développement, il a prototypé 23 contrôles de validation et exploré Llama 3.3 et Genie Space pour les investigations de qualité des données."
+    "id": "experience",
+    "source": "Résumé · Société Générale",
+    "en": "Mehdi completed four years of work-study at Société Générale, including two years in Big Data Engineering. He worked on a regulatory risk pipeline using Databricks, Spark and Delta Lake. In a development environment, he prototyped 23 data validation checks and explored Llama 3.3 and Genie Space for data quality investigation.",
+    "fr": "Mehdi a effectué quatre ans en alternance à Société Générale, dont deux en Big Data Engineering. Il a travaillé sur un pipeline de risque réglementaire avec Databricks, Spark et Delta Lake. En environnement de développement, il a prototypé 23 contrôles de validation et exploré Llama 3.3 et Genie Space pour les investigations de qualité des données."
   },
   {
-    "id":"education", "source":"Résumé · Education",
-    "keywords":["education","degree","school","master","esiea","efrei","kmutt","san jacinto","42","formation","diplôme","études"],
-    "en":"Mehdi earned a master’s-level engineering degree at ESIEA with a specialization in AI and Data Science and a minor in Finance. His studies also include an AI exchange at KMUTT, a bachelor’s at EFREI, the 42 Paris Piscine, and an Associate of Science in Engineering at San Jacinto College in Texas.",
-    "fr":"Mehdi est diplômé ingénieur de l’ESIEA, spécialité IA et Data Science et mineure Finance. Son parcours comprend un échange en IA à KMUTT, un bachelor à l’EFREI, la Piscine de 42 Paris et un Associate of Science in Engineering à San Jacinto College, au Texas."
+    "id": "education",
+    "source": "Résumé · Education",
+    "en": "Mehdi earned a master’s-level engineering degree at ESIEA with a specialization in AI and Data Science and a minor in Finance. His studies also include an AI exchange at KMUTT, a bachelor’s at EFREI, the 42 Paris Piscine, and an Associate of Science in Engineering at San Jacinto College in Texas.",
+    "fr": "Mehdi est diplômé ingénieur de l’ESIEA, spécialité IA et Data Science et mineure Finance. Son parcours comprend un échange en IA à KMUTT, un bachelor à l’EFREI, la Piscine de 42 Paris et un Associate of Science in Engineering à San Jacinto College, au Texas."
   },
   {
-    "id":"rover", "source":"RoverWatch & Rover Lab · Project",
-    "keywords":["rover","roverwatch","mars","nasa","rems","telemetry","télémétrie","simulation"],
-    "en":"RoverWatch analyzes public NASA REMS data from Mars. Rover Lab is an exploratory rover simulation.",
-    "fr":"RoverWatch analyse les données publiques martiennes de l’instrument REMS de la NASA. Rover Lab est une simulation exploratoire de rover."
+    "id": "rover",
+    "source": "RoverWatch & Rover Lab · Project",
+    "en": "RoverWatch analyzes public NASA REMS data from Mars. Rover Lab is an exploratory rover simulation.",
+    "fr": "RoverWatch analyse les données publiques martiennes de l’instrument REMS de la NASA. Rover Lab est une simulation exploratoire de rover."
   },
   {
-    "id":"academic", "source":"Portfolio · Academic projects",
-    "keywords":["academic","académique","scolaire","poster","affiche","movie","film","classification","recommendation","blognet","decision tree","pytorch","densenet"],
-    "en":"Academic projects include Movie Poster Classification, a team project using PyTorch and CNNs including DenseNet201, and a movie recommendation system using collaborative filtering and k-nearest neighbors. BlogNet uses React, Node.js and MongoDB.",
-    "fr":"Les projets académiques incluent la classification d’affiches de films en équipe avec PyTorch et des CNN dont DenseNet201, ainsi qu’un moteur de recommandation de films par filtrage collaboratif et k plus proches voisins. BlogNet utilise React, Node.js et MongoDB."
+    "id": "academic",
+    "source": "Portfolio · Academic projects",
+    "en": "Academic projects include Movie Poster Classification, a team project using PyTorch and CNNs including DenseNet201, and a movie recommendation system using collaborative filtering and k-nearest neighbors. BlogNet uses React, Node.js and MongoDB.",
+    "fr": "Les projets académiques incluent la classification d’affiches de films en équipe avec PyTorch et des CNN dont DenseNet201, ainsi qu’un moteur de recommandation de films par filtrage collaboratif et k plus proches voisins. BlogNet utilise React, Node.js et MongoDB."
   }
 ]
-
 const facts = new Map(knowledge.map((fact) => [fact.id, fact]))
 const apiKey = process.env.PORTFOLIO_GEMINI_API_KEY
 
