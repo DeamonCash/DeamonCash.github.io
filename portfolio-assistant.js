@@ -59,7 +59,7 @@ async function revealAnswer(answer, results) {
   bubble('assistant', [answer], results)
 }
 
-async function ask(question) {
+async function ask(question, lang = 'auto') {
   if (busy || !question.trim()) return
   busy = true
   send.disabled = true
@@ -69,7 +69,6 @@ async function ask(question) {
   pending.classList.add('typing')
   pending.setAttribute('aria-label', 'Gemini is preparing a reply')
   for (let index = 0; index < 3; index++) pending.append(document.createElement('span'))
-  const lang = /[àâéèêçùô]|\b(comment|quelles?|quels?|est-ce|parle|donne|quoi|qui|pourquoi|données)\b/i.test(question) ? 'fr' : 'en'
   try {
     const response = await fetch(new URL('/api/chat', 'https://mehdi-portfolio-ai.vercel.app'), {
       method: 'POST',
@@ -110,7 +109,7 @@ document.querySelectorAll('[data-question]').forEach((button) => {
     if (!button.hasAttribute('data-chat')) {
       setChatOpen(true)
     }
-    void ask(button.dataset.question)
+    void ask(button.dataset.question, 'en')
   })
 })
 
